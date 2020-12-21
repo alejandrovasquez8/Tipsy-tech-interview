@@ -120,6 +120,12 @@ Press the Calculate button and you should get the value 30.12 printed in the con
 
 ![goal app](./images/nineteen.gif)
 
+* gif with the project
+
+![goal app](./images/test.gif)
+
+
+
 
 ## Deliverables
 
