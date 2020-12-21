@@ -98,8 +98,6 @@ class CalculatorViewController: UIViewController {
         let splitNumber = Double(splitNumberLabel.text!)
         let billSplitted = billWithTip/splitNumber!
         
-        print(billSplitted)
-        
         let resultVC = storyboard?.instantiateViewController(identifier: "ResultsViewController") as! ResultsViewController
         present(resultVC, animated: true, completion: nil)
         self.delegate = resultVC
@@ -107,20 +105,4 @@ class CalculatorViewController: UIViewController {
         
     }
     
-}
-
-extension String {
-    static let numberFormatter = NumberFormatter()
-    var doubleValue: Double {
-        String.numberFormatter.decimalSeparator = "."
-        if let result =  String.numberFormatter.number(from: self) {
-            return result.doubleValue
-        } else {
-            String.numberFormatter.decimalSeparator = ","
-            if let result = String.numberFormatter.number(from: self) {
-                return result.doubleValue
-            }
-        }
-        return 0
-    }
 }

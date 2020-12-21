@@ -1,0 +1,25 @@
+//
+//  Extensions.swift
+//  Tipsy
+//
+//  Created by Alejandro Vasquez on 21/12/20.
+//  Copyright © 2020 The App Brewery. All rights reserved.
+//
+
+import Foundation
+
+extension String {
+    static let numberFormatter = NumberFormatter()
+    var doubleValue: Double {
+        String.numberFormatter.decimalSeparator = "."
+        if let result =  String.numberFormatter.number(from: self) {
+            return result.doubleValue
+        } else {
+            String.numberFormatter.decimalSeparator = ","
+            if let result = String.numberFormatter.number(from: self) {
+                return result.doubleValue
+            }
+        }
+        return 0
+    }
+}
